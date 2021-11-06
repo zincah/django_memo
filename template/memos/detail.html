@@ -11,10 +11,11 @@
         writer : {{ memos.writer }}  
     </div>
     <div>
-        content : <textarea class="form-control my-3">{{ memos.content }}</textarea>
+        content : <textarea class="form-control my-3" disabled>{{ memos.content }}</textarea>
     </div>
 
     <div class="my-5 text-end">
+        <a href="{% url 'memos:modify' memos.id %}"><button class="btn btn-outline-dark">Modify</button></a>
         <a href="{% url 'memos:index' %}"><button class="btn btn-outline-dark">Back</button></a>
     </div>
 

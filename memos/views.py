@@ -27,3 +27,15 @@ def detail(request, mpk):
         "memos" : mo,
     }
     return render(request, "memos/detail.html", context)
+
+def modify(request, mpk):
+    mo = Memos.objects.get(id=mpk)
+    context = {
+        "memos" : mo
+    }
+    if request.method == "POST":
+        con = request.POST.get("content")
+        mo.content = con
+        mo.save()
+        return redirect("memos:detail", mpk=mpk)
+    return render(request, "memos/modify.html", context)
