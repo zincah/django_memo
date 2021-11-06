@@ -20,3 +20,10 @@ def add(request):
         return redirect("memos:index")
 
     return render(request, "memos/add.html")
+
+def detail(request, mpk):
+    mo = Memos.objects.get(id=mpk)
+    context = {
+        "memos" : mo,
+    }
+    return render(request, "memos/detail.html", context)
