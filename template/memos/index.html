@@ -1,0 +1,42 @@
+{% extends 'base.html' %}  
+
+
+{% block content %}  
+
+
+
+<div class="container my-5">
+    <h1>memo</h1>
+    <div class="my-3 text-end">
+        <a href="{% url 'memos:add' %}"><button class="btn btn-outline-dark">+add</button></a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Subject</th>
+                <th scope="col">Content</th>
+                <th scope="col">Writer</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in memos %}  
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ i.subject }}</td>
+                <td>{{ i.summary }}</td>
+                <td>{{ i.writer }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+
+
+</div>
+
+
+
+
+  {% endblock %}

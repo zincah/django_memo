@@ -1,0 +1,34 @@
+{% extends 'base.html' %}  
+
+{% block content %}
+
+
+
+<div class="container my-5">
+
+    <form method="POST">
+        {% csrf_token %} 
+        <div class="my-5">
+            <h1>Create!</h1>
+        </div>
+        <div class="my-3">
+            Subject : <input name="subject" class="form-control" type="text">
+        </div>
+        <div class="my-3">
+            Writer : <input name="writer" class="form-control" type="text">
+        </div>
+        <div class="my-3">
+            Content : <input name="content" class="form-control" type="text">
+        </div>
+        <div class="my-5 text-end">
+            <button class="btn btn-outline-dark">+create</button>
+        </div>
+
+    </form>
+
+
+
+</div>
+
+
+{% endblock %}
